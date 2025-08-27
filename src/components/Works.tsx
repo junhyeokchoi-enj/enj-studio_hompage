@@ -54,7 +54,7 @@ const Works: React.FC = () => {
   )
 
   return (
-    <Section id="works" subtitle="Works" title="主要プロジェクト実績" bg="gray">
+    <Section id="works" subtitle="Case studies" title="主要プロジェクト実績" bg="gray">
       <div className={styles.text}>
         <p>
           これまで、外資系企業から国内大手企業、スタートアップに至るまで、幅広い顧客層に対し、

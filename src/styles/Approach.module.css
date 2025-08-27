@@ -1,0 +1,138 @@
+/* =========================================
+   Strategy.module.css  — full version
+   ・フラットなカード（影なし・細線）
+   ・タイトルは 1 行固定（…で省略）
+   ・5件: ピラミッド（上 1–2 / 下 3–5）
+   ・6件: 3×2（上 1–3 / 下 4–6）
+   ========================================= */
+
+:root {
+  /* 上段 1↔2 と下段 3↔4, 4↔5（6件時は 1↔2,2↔3 など）の間隔 */
+  --step-gap: 24px;
+}
+
+.lead {
+  max-width: 900px;
+  margin: 0 auto 20px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+/* ===== 5件用: ピラミッド（中央寄せ） =====
+   5カラム: [空] [s1] [gap] [s2] [空]
+           [s3] [gap] [s4] [gap] [s5]
+--------------------------------------- */
+.gridPyramid {
+  list-style: none;
+  padding: 0;
+  margin: 20px auto 10px;
+  display: grid;
+  grid-template-columns: 1fr var(--step-gap) 1fr var(--step-gap) 1fr;
+  grid-template-areas:
+    ".   s1  .   s2  ."
+    "s3  .   s4  .   s5";
+  column-gap: 0;   /* 横の隙間は gap 列で作る */
+  row-gap: 16px;
+  max-width: 1100px;
+}
+
+/* ===== 6件用: 3×2 =====
+   5カラム: [s1] [gap] [s2] [gap] [s3]
+           [s4] [gap] [s5] [gap] [s6]
+--------------------------------------- */
+.gridSix {
+  list-style: none;
+  padding: 0;
+  margin: 20px auto 10px;
+  display: grid;
+  grid-template-columns: 1fr var(--step-gap) 1fr var(--step-gap) 1fr;
+  grid-template-areas:
+    "s1  .  s2  .  s3"
+    "s4  .  s5  .  s6";
+  column-gap: 0;
+  row-gap: 16px;
+  max-width: 1100px;
+}
+
+/* モバイルはどちらも 1 列縦並び（読み順 1→…） */
+@media (max-width: 900px) {
+  .gridPyramid,
+  .gridSix {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "s1" "s2" "s3" "s4" "s5" "s6";
+    row-gap: 12px;
+  }
+}
+
+/* ===== エリア割当（DOM順は 1→N のまま） ===== */
+.card[data-step="1"] { grid-area: s1; }
+.card[data-step="2"] { grid-area: s2; }
+.card[data-step="3"] { grid-area: s3; }
+.card[data-step="4"] { grid-area: s4; }
+.card[data-step="5"] { grid-area: s5; }
+.card[data-step="6"] { grid-area: s6; }
+
+/* ===== カード & 中身 ===== */
+.card {
+  position: relative;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px 14px;
+  min-width: 0; /* これがないと ellipsis が効かない場合あり */
+}
+
+/* 旧レイアウトのコネクタ線が残っても無効化 */
+.card::before,
+.card::after { content: none !important; }
+
+.head {
+  display: grid;
+  grid-template-columns: auto 1fr auto; /* STEP / タイトル / アイコン */
+  align-items: center;
+  column-gap: 10px;
+  margin-bottom: 6px;
+}
+
+.stepNo {
+  font-size: 11px;
+  letter-spacing: .06em;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-weight: 600;
+  background: transparent;
+}
+
+.title {
+  font-size: 16px;
+  margin: 0;
+  color: var(--text);
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* 1 行固定で省略 */
+}
+
+.icon {
+  display: inline-grid;
+  place-items: center;
+  color: var(--muted);
+  opacity: .9;
+}
+.icon svg { width: 18px; height: 18px; }
+
+.points {
+  margin: 8px 0 0 18px;
+  padding: 0;
+  line-height: 1.55;
+  color: var(--text);
+}
+
+.note {
+  margin: 16px auto 0;
+  max-width: 900px;
+  color: var(--muted);
+}

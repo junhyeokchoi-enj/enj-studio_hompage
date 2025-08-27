@@ -1,52 +1,82 @@
+/* レイアウト */
 .wrap{
-  display:grid;
-  gap:20px;
-  grid-template-columns:1.2fr 1fr;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1.2fr 1fr; /* 左：代表メッセージ / 右：会社情報 */
 }
 @media (max-width: 880px){
-  .wrap{ grid-template-columns:1fr; }
+  .wrap{ grid-template-columns: 1fr; }
 }
 
-.text p{ margin:0; color: var(--text); }
+/* ========== 左：代表メッセージ ========== */
+.message{
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 18px 20px;
+  box-shadow: var(--shadow);
+}
 
-/* テーブル（ライトトーン） */
+.catch{
+  font-size: clamp(18px, 2.6vw, 22px);
+  font-weight: 800;
+  margin: 2px 0 10px;
+  color: var(--text);
+  letter-spacing: .01em;
+}
+
+.message p{
+  margin: 10px 0;
+  line-height: 1.8;
+  color: var(--text);
+}
+
+.sign{
+  margin-top: 14px;
+  color: var(--muted);
+  border-top: 1px dashed var(--line);
+  padding-top: 10px;
+}
+
+/* （互換）従来の .text を使っていても崩れないように */
+.text p{ margin: 0; color: var(--text); }
+
+/* ========== 右：会社情報テーブル（ライトトーン） ========== */
 .table{
-  width:100%;
+  width: 100%;
   border-collapse: collapse;
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:12px;
-  overflow:hidden;
-  box-shadow: var(--shadow); /* ← テーブル自身に影を付ける */
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
 }
 
 .table th,
 .table td{
-  padding:12px 14px;
-  border-bottom:1px solid var(--line);
-  vertical-align:top;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
 }
 
 .table th{
-  width:28%;
-  color:var(--muted);
-  text-align:left;
-  white-space:nowrap;
+  width: 28%;
+  color: var(--muted);
+  text-align: left;
+  white-space: nowrap;
 }
 
-.table td{
-  color: var(--text);
-}
+.table td{ color: var(--text); }
 
 .table tr:last-child th,
 .table tr:last-child td{
-  border-bottom:none;
+  border-bottom: none;
 }
 
 /* 箇条書き（事業内容） */
 .bullets{
   margin: 0;
-  padding-left: 1.2em; /* テーブル内でも見やすく */
+  padding-left: 1.2em;
   list-style: disc;
 }
 
@@ -55,3 +85,79 @@
   line-height: 1.6;
   color: var(--text);
 }
+
+.message,
+.table{
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto 16px;         /* セクション中央 & 下に余白 */
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+/* ===== 代表メッセージ ===== */
+.message{ padding: 18px 20px; }
+
+.catch{
+  font-size: clamp(18px, 2.6vw, 22px);
+  font-weight: 800;
+  margin: 2px 0 10px;
+  color: var(--text);
+  letter-spacing: .01em;
+}
+
+.message p{
+  margin: 10px 0;
+  line-height: 1.8;
+  color: var(--text);
+}
+
+.sign{
+  margin-top: 14px;
+  color: var(--muted);
+  border-top: 1px dashed var(--line);
+  padding-top: 10px;
+}
+
+/* ===== テーブル ===== */
+.table{
+  border-collapse: collapse;
+  overflow: hidden;
+}
+
+.table th,
+.table td{
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+.table th{
+  width: 28%;
+  color: var(--muted);
+  text-align: left;
+  white-space: nowrap;
+}
+
+.table td{ color: var(--text); }
+
+.table tr:last-child th,
+.table tr:last-child td{ border-bottom: none; }
+
+/* 箇条書き（事業内容） */
+.bullets{
+  margin: 0;
+  padding-left: 1.2em;
+  list-style: disc;
+}
+.bullets li{
+  margin: 4px 0;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+/* 互換（もし .wrap/.text を参照していても壊れないよう定義を保持） */
+.wrap{ display:block; gap:0; grid-template-columns:1fr; }
+.text p{ margin:0; color: var(--text); }

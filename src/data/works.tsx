@@ -9,7 +9,7 @@ export type WorkItem = {
 export const works: WorkItem[] = [
   {
     id: 1,
-    categories: ["マーケッティング・リサーチ"],
+    categories: ["マーケティング・リサーチ"],
     text: "海外企業のeコマース向けプロモーション戦略検討支援",
   },
   {
@@ -56,5 +56,15 @@ export const works: WorkItem[] = [
     id: 10,
     categories: ["生成AI活用支援"],
     text: "国内SIerの社内営業向けRAG開発の伴走型支援",
+  },
+  {
+    id: 11,
+    categories: ["ソフトウェア開発・PM支援"],
+    text: "中堅外資系生命保険企業の基幹系システム刷新プロジェクトPM支援",
+  },
+  {
+    id: 12,
+    categories: ["ソフトウェア開発・PM支援"],
+    text: "大手外資系損害保険・生命保険企業の事業統合に伴うシステム統合プロジェクトPMO支援",
   },
 ]

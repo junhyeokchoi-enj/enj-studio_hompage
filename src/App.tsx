@@ -2,6 +2,8 @@ import React from 'react'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import Services from './components/Services'
+import Strategy from './components/Strategy'
+import Approach from './components/Approach'
 import Works from './components/Works'
 import About from './components/About'
 import Contact from './components/Contact'
@@ -14,6 +16,8 @@ const App: React.FC = () => {
       <main className={styles.main}>
         <Hero />
         <Services />
+        <Strategy />
+        <Approach />
         <Works />
         <About />
         <Contact />
