@@ -53,3 +53,5 @@
 .fillTint::before { background: var(--fill-tint); }
 .fillGray::before { background: var(--fill-gray); }
 .fillBrand::before{ background: var(--fill-brand); }
+
+/* 中央に白カード（枠・影付き）を置く */
