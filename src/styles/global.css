@@ -1,0 +1,30 @@
+:root{
+  --page:#fafbfc;         /* ← ページ全体の単色背景 */
+  --card:#ffffff;
+  --text:#0e1321;
+  --muted:#5c667a;
+  --accent:#2b6cff;
+  --line:#e5e8ef;
+
+  /* セクション用の“色面”プリセット（お好みで調整） */
+  --fill-neutral: #ffffff;   /* 純白カード */
+  --fill-tint:    #f3f6ff;   /* ほんのり青み */
+  --fill-gray:    #f6f7fa;   /* ほんのりグレー */
+  --fill-brand:   #eef3ff;   /* ブランド寄りの淡色 */
+  --shadow: 0 8px 24px rgba(14,19,33,.06);
+}
+
+
+
+*{box-sizing:border-box}
+html,body,#root{height:100%}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans JP", sans-serif;
+  color:var(--text);
+  background: var(--page);   /* ← グラデをやめて単色に */
+}
+a{color:var(--accent); text-decoration:none}
+a:hover{opacity:.9}
+img{max-width:100%; display:block}
+button{cursor:pointer}

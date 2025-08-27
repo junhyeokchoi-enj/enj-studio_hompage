@@ -1,0 +1,14 @@
+.hero{
+  min-height:76vh; display:grid; place-items:center;
+  background:
+    radial-gradient(700px 320px at 20% -10%, rgba(43,108,255,.08) 0, transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,.7), transparent 40%);
+}
+.inner{ text-align:center; padding:0 20px; max-width:960px }
+.inner h1{ font-size: clamp(28px, 4vw, 46px); margin:0 0 12px; color:var(--text) }
+.inner p{ color:var(--muted); margin:0 0 24px }
+.cta{
+  display:inline-block; padding:12px 18px; border-radius:10px;
+  background:var(--accent); color:#fff; font-weight:700;
+  box-shadow: var(--shadow);
+}

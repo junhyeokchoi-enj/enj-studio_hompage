@@ -1,0 +1,57 @@
+.wrap{
+  display:grid;
+  gap:20px;
+  grid-template-columns:1.2fr 1fr;
+}
+@media (max-width: 880px){
+  .wrap{ grid-template-columns:1fr; }
+}
+
+.text p{ margin:0; color: var(--text); }
+
+/* テーブル（ライトトーン） */
+.table{
+  width:100%;
+  border-collapse: collapse;
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow: var(--shadow); /* ← テーブル自身に影を付ける */
+}
+
+.table th,
+.table td{
+  padding:12px 14px;
+  border-bottom:1px solid var(--line);
+  vertical-align:top;
+}
+
+.table th{
+  width:28%;
+  color:var(--muted);
+  text-align:left;
+  white-space:nowrap;
+}
+
+.table td{
+  color: var(--text);
+}
+
+.table tr:last-child th,
+.table tr:last-child td{
+  border-bottom:none;
+}
+
+/* 箇条書き（事業内容） */
+.bullets{
+  margin: 0;
+  padding-left: 1.2em; /* テーブル内でも見やすく */
+  list-style: disc;
+}
+
+.bullets li{
+  margin: 4px 0;
+  line-height: 1.6;
+  color: var(--text);
+}

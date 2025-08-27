@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "typeRoots": ["node_modules/@types"],
+    "jsx": "react",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "target": "ES6",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,  
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "node",
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "erasableSyntaxOnly": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true
+  },
+  "include": ["src"]
+}

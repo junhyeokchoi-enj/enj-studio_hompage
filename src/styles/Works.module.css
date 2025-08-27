@@ -1,0 +1,75 @@
+.text {
+  max-width: 900px;
+  margin: 0 auto 20px;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+/* タブ */
+.tablist {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 8px auto 16px;
+  max-width: 900px;
+}
+
+.tab {
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  background: var(--card);     /* ← ライトトーン用に白ベース */
+  color: var(--muted);
+  border-radius: 999px;
+  font-size: 14px;
+  transition: background .15s ease, color .15s ease, border-color .15s ease;
+}
+
+.tab:hover { opacity: .9 }
+
+.active {
+  color: #fff;
+  background: var(--accent);   /* 選択時はアクセント色 */
+  border-color: var(--accent);
+  font-weight: 700;
+}
+
+/* パネル */
+.panel {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* リスト */
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list li {
+  display: grid;
+  grid-template-columns: 200px 1fr; /* 左にカテゴリ、右にテキスト */
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+@media (max-width: 700px) {
+  .list li { grid-template-columns: 1fr }
+}
+
+.catBlock {
+  display: flex;
+  flex-direction: column; /* 縦並び */
+  gap: 4px;
+}
+
+.cat {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.textItem {
+  line-height: 1.75;
+  color: var(--text);
+}

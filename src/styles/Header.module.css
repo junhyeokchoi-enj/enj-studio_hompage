@@ -1,0 +1,13 @@
+.header{
+  position:fixed; inset:0 0 auto 0; height:72px;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:0 20px;
+  background:rgba(255,255,255,.7);  /* ← 透過ホワイト */
+  backdrop-filter: blur(8px);
+  border-bottom:1px solid var(--line);
+  z-index:10;
+}
+.logo{font-weight:700; letter-spacing:.02em; color:var(--text)}
+.nav{display:flex; gap:20px}
+.nav a{color:var(--muted)}
+.nav a:hover{color:var(--text)}
